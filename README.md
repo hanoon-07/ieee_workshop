@@ -73,16 +73,4 @@ npm run dev
 
 ## You're Ready to Go! 🚀
 
-Your React application with Vite and Tailwind CSS is now ready for development. The development server will start and you can view your application in the browser.
 
-## What's Next?
-
-- Start building your components in the `src` directory
-- Use Tailwind CSS classes for styling
-- Enjoy the fast hot-reload provided by Vite
-
-## Useful Commands
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
