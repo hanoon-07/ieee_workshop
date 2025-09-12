@@ -1,6 +1,6 @@
-# IEEE Workshop - React Setup Guide (Tailwind CSS v4 - 2025)
+# IEEE Workshop 
 
-This guide will walk you through setting up a React project using Vite and the latest Tailwind CSS v4.
+
 
 ## Prerequisites
 
@@ -84,6 +84,7 @@ function App() {
 
 export default App
 ```
+
 
 
 
