@@ -1,10 +1,10 @@
-# IEEE Workshop - React Setup Guide
+# IEEE Workshop - React Setup Guide (Tailwind CSS v4 - 2025)
 
-This guide will walk you through setting up a React project using Vite and Tailwind CSS.
+This guide will walk you through setting up a React project using Vite and the latest Tailwind CSS v4.
 
 ## Prerequisites
 
-Make sure you have Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
+Make sure you have Node.js (v18+) installed on your machine. You can download it from [nodejs.org](https://nodejs.org/).
 
 ## Setup Steps
 
@@ -13,6 +13,8 @@ Make sure you have Node.js installed on your machine. You can download it from [
 ```bash
 npm create vite@latest my-app
 ```
+
+Choose "React" when prompted for the framework.
 
 ### 2. Navigate to your project directory
 
@@ -26,63 +28,62 @@ cd my-app
 npm install
 ```
 
-### 4. Install Tailwind CSS and its dependencies
+### 4. Install Tailwind CSS v4
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
+npm install tailwindcss @tailwindcss/vite
 ```
 
-### 5. Initialize Tailwind CSS configuration
+### 5. Configure Vite
 
-```bash
-npx tailwindcss init -p
-```
-
-### 6. Configure Tailwind CSS
-
-Edit `tailwind.config.js` and replace its contents with:
+Edit `vite.config.js` and add the Tailwind CSS plugin:
 
 ```javascript
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+})
 ```
 
-### 7. Add Tailwind directives to your CSS
+### 6. Add Tailwind CSS to your stylesheet
 
 Open `src/index.css` and replace its contents with:
 
 ```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 ```
 
-### 9. Start the development server
+**Note:** In Tailwind CSS v4, you no longer need the `@tailwind base;`, `@tailwind components;`, `@tailwind utilities;` directives. Just one simple import!
+
+### 7. Start the development server
 
 ```bash
 npm run dev
 ```
 
-## You're Ready to Go! 🚀
+### 8. Test Tailwind CSS
 
-Your React application with Vite and Tailwind CSS is now ready for development. The development server will start and you can view your application in the browser.
+Replace the content in `src/App.jsx` with:
 
-## What's Next?
+```jsx
+function App() {
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <h1 className="text-4xl font-bold text-blue-600 underline">
+        Hello Tailwind CSS v4!
+      </h1>
+    </div>
+  )
+}
 
-- Start building your components in the `src` directory
-- Use Tailwind CSS classes for styling
-- Enjoy the fast hot-reload provided by Vite
+export default App
+```
 
-## Useful Commands
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
+
