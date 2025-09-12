@@ -2,7 +2,7 @@
 
 ## steps to get started with react
 
-npm create vite@latest my-app
+npm create vite@latest my-app\n
 cd my-app
 npm install
 npm install -D tailwindcss postcss autoprefixer
@@ -28,6 +28,7 @@ Open src/index.css
 
 running
 npm run dev
+
 
 
 
